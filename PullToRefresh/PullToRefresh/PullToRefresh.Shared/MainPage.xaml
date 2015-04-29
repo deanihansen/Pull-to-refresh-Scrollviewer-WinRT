@@ -38,7 +38,8 @@
         <controls:PullToRefreshScrollViewer
             Grid.Row="1"
             RefreshCommand="{Binding RefreshCommand}"
-            RefreshHeaderHeight="50">
+            RefreshHeaderHeight="50"
+            ArrowColor="#004050">
             <ItemsControl
                 ItemsSource="{Binding Images}">
                 <ItemsControl.ItemTemplate>
