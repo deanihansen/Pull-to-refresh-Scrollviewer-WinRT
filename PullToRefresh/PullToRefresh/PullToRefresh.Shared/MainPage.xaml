@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="PullToRefresh.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PullToRefresh"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:PullToRefresh.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid
+        x:Name="rootContainer"
+        Background="#FFF3F3F3">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="75" />
+            <RowDefinition
+                Height="*" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0"
+            Background="#004050">
+            <ProgressBar
+                VerticalAlignment="Top"
+                Foreground="White"
+                Background="Transparent"
+                IsIndeterminate="{Binding IsLoading}" />
+            <TextBlock
+                FontSize="24"
+                Text="Pull to refresh sample"
+                CharacterSpacing="100"
+                Foreground="White"
+                FontWeight="Light"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </Grid>
+        <controls:PullToRefreshScrollViewer
+            Grid.Row="1"
+            RefreshCommand="{Binding RefreshCommand}"
+            RefreshHeaderHeight="50">
+            <ItemsControl
+                ItemsSource="{Binding Images}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Grid.Row="0"
+                            Margin="30,30,30,16"
+                            Background="White"
+                            VerticalAlignment="Top">
+                            <Image
+                                Margin="30"
+                                Source="{Binding }" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+    </controls:PullToRefreshScrollViewer>
+    </Grid>
+</Page>
