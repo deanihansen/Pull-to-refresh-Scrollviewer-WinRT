@@ -37,7 +37,7 @@ namespace PullToRefresh.Controls
 
         public static readonly DependencyProperty PullTextProperty = DependencyProperty.Register("PullText", typeof(string), typeof(PullToRefreshScrollViewer), new PropertyMetadata("Pull to refresh"));
         public static readonly DependencyProperty RefreshTextProperty = DependencyProperty.Register("RefreshText", typeof(string), typeof(PullToRefreshScrollViewer), new PropertyMetadata("Release to refresh"));
-        public static readonly DependencyProperty RefreshHeaderHeightProperty = DependencyProperty.Register("RefreshHeaderHeight", typeof(double), typeof(PullToRefreshScrollViewer), new PropertyMetadata(100));
+        public static readonly DependencyProperty RefreshHeaderHeightProperty = DependencyProperty.Register("RefreshHeaderHeight", typeof(double), typeof(PullToRefreshScrollViewer), new PropertyMetadata(100D));
         public static readonly DependencyProperty RefreshCommandProperty = DependencyProperty.Register("RefreshCommand", typeof(ICommand), typeof(PullToRefreshScrollViewer), new PropertyMetadata(null));
         public static readonly DependencyProperty ArrowColorProperty =  DependencyProperty.Register("ArrowColor", typeof(Brush), typeof(PullToRefreshScrollViewer), new PropertyMetadata(new SolidColorBrush(Colors.Red)));
 
